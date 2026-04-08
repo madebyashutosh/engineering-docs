@@ -12,7 +12,7 @@ This step ensures:
 ## 1. Connect Using Created User
 
 ```bash
-psql -h <rds-endpoint> -U <project_name>_dev_user -d <project_name>_dev -p 5432
+psql -h <rds-endpoint> -U <database_user> -d <database_name> -p 5432
 ```
 
 > Enter the user password when prompted
@@ -27,8 +27,8 @@ SELECT current_user;
 
 Expected output:
 
-```
-<project_name>_dev_user
+```text
+<database_user>
 ```
 
 ---
@@ -106,10 +106,10 @@ DROP TABLE test_table;
 
 ### ❌ Permission denied
 
-Run this using master user:
+Run this using master/admin user:
 
 ```sql
-GRANT ALL ON SCHEMA public TO <project_name>_dev_user;
+GRANT ALL ON SCHEMA public TO <database_user>;
 ```
 
 ---
@@ -118,4 +118,5 @@ GRANT ALL ON SCHEMA public TO <project_name>_dev_user;
 
 * Always verify using the **created user**, not master
 * Ensure `psql` is installed locally
+* Use environment-based naming (e.g., `myapp_dev`, `myapp_prod`)
 

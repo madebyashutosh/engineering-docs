@@ -5,7 +5,7 @@
 This step covers:
 
 * Connecting to RDS via terminal
-* Creating a development database
+* Creating a database
 * Creating a dedicated user
 * Assigning ownership and privileges
 
@@ -28,7 +28,7 @@ psql -h <rds-endpoint> -U <master_username> -d postgres -p 5432
 ## 1. Create Database
 
 ```sql
-CREATE DATABASE <project_name>_dev;
+CREATE DATABASE <database_name>;
 ```
 
 ---
@@ -36,7 +36,7 @@ CREATE DATABASE <project_name>_dev;
 ## 2. Create User
 
 ```sql
-CREATE USER <project_name>_dev_user WITH PASSWORD 'your_password';
+CREATE USER <database_user> WITH PASSWORD 'your_password';
 ```
 
 ---
@@ -44,7 +44,7 @@ CREATE USER <project_name>_dev_user WITH PASSWORD 'your_password';
 ## 3. Grant Database Privileges
 
 ```sql
-GRANT ALL PRIVILEGES ON DATABASE <project_name>_dev TO <project_name>_dev_user;
+GRANT ALL PRIVILEGES ON DATABASE <database_name> TO <database_user>;
 ```
 
 ---
@@ -52,15 +52,15 @@ GRANT ALL PRIVILEGES ON DATABASE <project_name>_dev TO <project_name>_dev_user;
 ## 4. Change Database Owner
 
 ```sql
-ALTER DATABASE <project_name>_dev OWNER TO <project_name>_dev_user;
+ALTER DATABASE <database_name> OWNER TO <database_user>;
 ```
 
 ---
 
-## 5. Connect to New Database
+## 5. Connect to Database
 
 ```sql
-\c <project_name>_dev
+\c <database_name>
 ```
 
 ---
@@ -68,7 +68,7 @@ ALTER DATABASE <project_name>_dev OWNER TO <project_name>_dev_user;
 ## 6. Grant Schema Permissions
 
 ```sql
-GRANT ALL ON SCHEMA public TO <project_name>_dev_user;
+GRANT ALL ON SCHEMA public TO <database_user>;
 ```
 
 ---
@@ -81,12 +81,28 @@ GRANT ALL ON SCHEMA public TO <project_name>_dev_user;
 
 ---
 
+## Naming Convention (Recommended)
+
+Use environment-based naming:
+
+```text
+<project_name>_<environment>
+<project_name>_<environment>_user
+```
+
+### Examples:
+
+* `myapp_dev`, `myapp_dev_user`
+* `myapp_staging`, `myapp_staging_user`
+* `myapp_prod`, `myapp_prod_user`
+
+---
+
 ## Notes
 
-* Replace `<project_name>` with your actual project name
+* Replace placeholders with actual values
 * Ensure your IP is allowed in RDS security group
 * Install `psql` if not available:
 
   * Mac: `brew install postgresql`
   * Ubuntu: `sudo apt install postgresql-client`
-
