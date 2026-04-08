@@ -4,10 +4,10 @@
 
 This step covers:
 
-* Connecting to RDS via terminal
-* Creating a database
-* Creating a dedicated user
-* Assigning ownership and privileges
+- Connecting to RDS via terminal
+- Creating a database
+- Creating a dedicated user
+- Assigning ownership and privileges
 
 ---
 
@@ -92,17 +92,16 @@ Use environment-based naming:
 
 ### Examples:
 
-* `myapp_dev`, `myapp_dev_user`
-* `myapp_staging`, `myapp_staging_user`
-* `myapp_prod`, `myapp_prod_user`
+- `myapp_dev`, `myapp_dev_user`
+- `myapp_staging`, `myapp_staging_user`
+- `myapp_prod`, `myapp_prod_user`
 
 ---
 
 ## Notes
 
-* Replace placeholders with actual values
-* Ensure your IP is allowed in RDS security group
-* Install `psql` if not available:
-
-  * Mac: `brew install postgresql`
-  * Ubuntu: `sudo apt install postgresql-client`
+- Replace placeholders with actual values
+- Ensure your IP is allowed in RDS security group
+- Install `psql` if not available:
+  - Mac: `brew install postgresql`
+  - Ubuntu: `sudo apt install postgresql-client`

@@ -4,8 +4,8 @@
 
 This step ensures:
 
-* The user can connect to the database
-* Required permissions are correctly assigned
+- The user can connect to the database
+- Required permissions are correctly assigned
 
 ---
 
@@ -90,21 +90,21 @@ DROP TABLE test_table;
 
 ## Common Issues
 
-### ❌ Connection refused
+### Connection refused
 
-* Check RDS security group (allow your IP)
-* Ensure correct endpoint and port
-
----
-
-### ❌ Authentication failed
-
-* Verify username/password
-* Ensure correct database name
+- Check RDS security group (allow your IP)
+- Ensure correct endpoint and port
 
 ---
 
-### ❌ Permission denied
+### Authentication failed
+
+- Verify username/password
+- Ensure correct database name
+
+---
+
+### Permission denied
 
 Run this using master/admin user:
 
@@ -116,7 +116,6 @@ GRANT ALL ON SCHEMA public TO <database_user>;
 
 ## Notes
 
-* Always verify using the **created user**, not master
-* Ensure `psql` is installed locally
-* Use environment-based naming (e.g., `myapp_dev`, `myapp_prod`)
-
+- Always verify using the **created user**, not master
+- Ensure `psql` is installed locally
+- Use environment-based naming (e.g., `myapp_dev`, `myapp_prod`)
