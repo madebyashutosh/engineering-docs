@@ -6,9 +6,9 @@ This repository contains **standard operating procedures (SOPs)** for common eng
 
 It is intended to grow into a centralized knowledge base for:
 
-* Databases
-* Infrastructure
-* Development workflows
+- Databases
+- Infrastructure
+- Development workflows
 
 ---
 
@@ -17,17 +17,19 @@ It is intended to grow into a centralized knowledge base for:
 ```text
 database/
   postgresql/
-    01-create-database-and-user.md
-    02-verify-database-and-user.md
+    00-prerequisites.md
+    01-installation.md
+    02-create-database-and-user.md
+    03-verify-database-and-user.md
 ```
 
 ---
 
 ## Philosophy
 
-* Keep SOPs **simple, clear, and reproducible**
-* Prefer **terminal-first workflows**
-* Use **generic, reusable patterns** (avoid environment-specific assumptions)
+- Keep SOPs **simple, clear, and reproducible**
+- Prefer **terminal-first workflows**
+- Use **generic, reusable patterns** (avoid environment-specific assumptions)
 
 ---
 
@@ -43,10 +45,11 @@ database/
 
 ### Files
 
-* Use clear, action-based names:
-
-  * `create-database-and-user.md`
-  * `verify-database-and-user.md`
+- Use clear, action-based names:
+  - `prerequisites.md`
+  - `installation.md`
+  - `create-database-and-user.md`
+  - `verify-database-and-user.md`
 
 ### Placeholders
 
@@ -62,8 +65,8 @@ Use generic placeholders:
 
 ## Notes
 
-* Do not commit real credentials or endpoints
-* Keep SOPs environment-agnostic where possible
+- Do not commit real credentials or endpoints
+- Keep SOPs environment-agnostic where possible
 
 ---
 
@@ -71,7 +74,7 @@ Use generic placeholders:
 
 This repository will expand to include:
 
-* More databases
-* Cloud-specific setups
-* Deployment and DevOps workflows
-
+- More databases (MySQL, MongoDB, etc.)
+- Cloud-specific setups (AWS, GCP, Azure)
+- Deployment and DevOps workflows
+- Monitoring, backup, and recovery SOPs
