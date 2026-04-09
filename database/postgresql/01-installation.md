@@ -102,7 +102,7 @@ SELECT version();
 Exit psql:
 
 ```SQL
-/q
+\q
 ```
 
 ---
