@@ -1,13 +1,29 @@
-# Create Database and User (PostgreSQL RDS - Terminal Only)
+# PostgreSQL RDS: Database & User Setup Guide
 
-## Overview
+## Overview & Why
 
-This step covers:
+This SOP guides you through creating a **dedicated PostgreSQL database and user** on an RDS instance using the terminal.
 
-- Connecting to RDS via terminal
-- Creating a database
-- Creating a dedicated user
-- Assigning ownership and privileges
+Using the **master/admin** user for daily application operations is risky: it has unrestricted access, and any accidental command could affect all databases on the instance.
+
+##### Instead, this SOP ensures:
+
+* **Isolation:** Each application gets its own database.
+* **Security:** Dedicated users have only the permissions they need.
+* **Ownership clarity:** Users can manage their database objects without touching the master.
+* **Environment management:** Separate users and databases for dev, staging, and production environments.
+
+By following this process, you reduce risk, improve maintainability, and enable safer day-to-day operations.
+
+##### The SOP covers:
+
+1. Connecting to RDS using the master/admin role
+2. Creating a new database
+3. Creating a dedicated user
+4. Assigning privileges and ownership
+5. Connecting to the database and setting schema permissions
+
+> ⚠️ The master/admin user is only used for setup and administration. All regular operations should be done with the dedicated user.
 
 ---
 
