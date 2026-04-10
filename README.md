@@ -1,80 +1,51 @@
-# Engineering SOPs & Playbooks
+# Engineering Docs
 
-## Overview
+A collection of **practical engineering knowledge** organized in a flexible, evolving structure.
 
-This repository contains **standard operating procedures (SOPs)** for common engineering tasks.
+## Organization
 
-It is intended to grow into a centralized knowledge base for:
-
-- Databases
-- Infrastructure
-- Development workflows
-
----
-
-## Current Structure
+Content in this repository is organized using **nested directories of arbitrary depth**:
 
 ```text
-database/
-  postgresql/
-    00-prerequisites.md
-    01-installation.md
-    02-create-database-and-user.md
-    03-verify-database-and-user.md
+<any-level>/
+  <any-level>/
+    <topic>/
+      README.md
+      ...
 ```
 
----
+There are no fixed rules for:
 
-## Philosophy
+- Number of levels
+- Naming of directories
+- Grouping strategy
 
-- Keep SOPs **simple, clear, and reproducible**
-- Prefer **terminal-first workflows**
-- Use **generic, reusable patterns** (avoid environment-specific assumptions)
+Structure is defined based on **what best represents the problem space**.
 
----
+## Navigation
+- Traverse directories based on context (technology, domain, feature, etc.)
+- Each leaf topic contains its own `README.md`
+- Topics are self-contained and independently understandable
+## Principles
+- Explain why before how
+- Prefer practical over theoretical
+- Design for real-world systems
+- Keep content modular and loosely coupled
+## Scalability
 
-## Usage
+This repository is designed to evolve without structural constraints:
 
-1. Navigate to the relevant folder (e.g., `database/postgresql`)
-2. Follow steps in order (based on numbering)
-3. Replace placeholders with actual values
+- Topics can be grouped by:
+  - Technology (e.g., PostgreSQL, AWS)
+  - Domain (e.g., backend, mobile)
+  - Feature (e.g., authentication, caching)
+  - Any other meaningful abstraction
+- Hierarchy can change as understanding improves
+- New layers can be introduced at any time
+### Notes
+- No enforced global structure
+- No dependency between topics
+- No required learning order
+### Final Thought
 
----
-
-## Naming Conventions
-
-### Files
-
-- Use clear, action-based names:
-  - `prerequisites.md`
-  - `installation.md`
-  - `create-database-and-user.md`
-  - `verify-database-and-user.md`
-
-### Placeholders
-
-Use generic placeholders:
-
-```text
-<database_name>
-<database_user>
-<rds-endpoint>
-```
-
----
-
-## Notes
-
-- Do not commit real credentials or endpoints
-- Keep SOPs environment-agnostic where possible
-
----
-
-## Future Scope
-
-This repository will expand to include:
-
-- More databases (MySQL, MongoDB, etc.)
-- Cloud-specific setups (AWS, GCP, Azure)
-- Deployment and DevOps workflows
-- Monitoring, backup, and recovery SOPs
+This is not a fixed documentation tree - it is a **flexible engineering knowledge** system that grows with usage.
