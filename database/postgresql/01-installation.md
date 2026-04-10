@@ -95,13 +95,13 @@ postgres=#
 
 Test a simple SQL command:
 
-```SQL
+```sql
 SELECT version();
 ```
 
 Exit psql:
 
-```SQL
+```sql
 \q
 ```
 
